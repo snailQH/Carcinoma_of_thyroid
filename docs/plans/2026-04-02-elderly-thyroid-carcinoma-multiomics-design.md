@@ -2,8 +2,8 @@
 
 **Project:** Molecular subtyping of elderly thyroid carcinoma for clinical decision support
 **Date:** 2026-04-02
-**Status:** Phase 1-6 complete, Phase 7 in progress
-**Last updated:** 2026-04-02
+**Status:** Phase 1-7 partially complete, external validation done, elderly vs young done
+**Last updated:** 2026-04-03
 
 ---
 
@@ -108,13 +108,23 @@
 - [x] 86. Clinical decision framework table
 - [ ] 87. LASSO / elastic-net gene signature (minimal panel)
 - [ ] 88. Risk score construction
-- [ ] 89. External validation on GEO bulk cohorts
+- [x] 89. External validation on GEO bulk cohorts (GSE29265 n=49, GSE33630 n=105, NTP scoring)
 - [ ] 90. Time-dependent ROC / C-index
 - [ ] 91. Calibration plot
 - [ ] 92. R Shiny / Python scoring tool
 
+### Phase 6B: Elderly vs Young Adult Comparison (NEW)
+- [x] 92a. Elderly vs young demographics comparison (120 vs 385 patients)
+- [x] 92b. DEG analysis: elderly vs young (volcano plot, t-test per gene)
+- [x] 92c. GSVA pathway comparison: elderly vs young (11 pathways, boxplots)
+- [x] 92d. Immune cell scoring comparison: elderly vs young (6 cell types)
+- [x] 92e. Mutation frequency comparison: elderly vs young (10 drivers, BRAF Fisher p=0.83)
+- [x] 92f. Clinical comparison: LN metastasis (30% vs 41.6%), Stage III/IV (51.7% vs 22.3%)
+- [x] 92g. Survival comparison: elderly vs young (KM curve)
+- [x] 92h. TDS comparison: elderly vs young
+
 ### Phase 7: Outputs & Manuscript
-- [x] 93. Summary PPTX generated (11 slides)
+- [x] 93. Summary PPTX generated (17 slides with speaker notes, figures, tables embedded)
 - [x] 94. All main figures (Fig 1-8) generated as PDF
 - [x] 95. All supplementary boxplots generated (30+ plots)
 - [x] 96. All summary tables generated (11 CSV files)
@@ -137,7 +147,10 @@
 - [ ] 111. Mendelian randomization for causal targets
 - [ ] 112. Immunosenescence plasma biomarker cross-reference
 
-**Summary: 52 of 112 analyses completed (46%)**
+- [x] 97a. Manuscript draft v1 with embedded figures and elderly vs young section
+- [x] 97b. External validation section added to manuscript
+
+**Summary: 63 of 120 analyses completed (53%)**
 
 ---
 

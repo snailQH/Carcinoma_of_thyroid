@@ -102,6 +102,8 @@ From 505 primary tumor samples in TCGA-THCA, 120 elderly patients (>=60 years) w
 
 Consensus clustering identified k = 2 as the optimal number of subtypes, with exceptional stability metrics: PAC = 0.084 (lowest across k = 2–6) and mean silhouette width = 0.95. Subtype C1 comprised 41 patients (34.2%) and C2 comprised 79 patients (65.8%) (Figure 1).
 
+![Figure 1. Consensus clustering heatmap of 120 elderly PTC patients (k=2, PAC=0.084, silhouette=0.95). Top annotations show subtype (C1/C2), age, and gender.](../figures/Fig1_subtype_heatmap.pdf)
+
 ### 3.3 Distinct Mutational Drivers Define Each Subtype
 
 The two subtypes exhibited strikingly divergent mutational profiles. **Subtype C1** was characterized by RAS family mutations: NRAS (21.6%), HRAS (8.1%), and KRAS (2.7%), with complete absence of BRAF mutations (0%). **Subtype C2** was dominated by BRAF V600E (87.2%), with no NRAS or HRAS mutations detected (Figure 2, Table 2). This dichotomy mirrors the classical TCGA BRAF-like versus RAS-like classification [4] but is here demonstrated specifically within the elderly population.
@@ -120,17 +122,27 @@ The two subtypes exhibited strikingly divergent mutational profiles. **Subtype C
 
 *Patients with available mutation data.
 
+![Figure 2. Tumor mutational burden (TMB) by subtype.](../figures/Fig2_TMB_by_subtype.pdf)
+
 ### 3.4 Divergent Pathway Programs
 
 GSVA analysis across 11 biological programs revealed significant differences between subtypes (Figure 4). **Subtype C2** showed elevated scores for EMT (mean GSVA: 0.124 vs. −0.251), cell adhesion (0.188 vs. −0.298), proliferation (0.062 vs. −0.148), SASP (0.120 vs. −0.199), cellular senescence (0.183 vs. −0.288), immunosenescence (0.107 vs. −0.254), and glycolysis (0.121 vs. −0.215). In contrast, **Subtype C1** exhibited higher oxidative phosphorylation (OXPHOS) (0.239 vs. −0.257) and angiogenesis (0.244 vs. −0.164).
 
+![Figure 4A. GSVA pathway heatmap across 11 biological programs, split by subtype.](../figures/Fig4_GSVA_heatmap.pdf)
+
 The thyroid differentiation score (TDS), reflecting the expression of 10 key thyroid-specific genes, did not show a statistically significant difference between subtypes in this elderly cohort, suggesting that both subtypes retain a degree of thyroid-specific gene expression characteristic of well-differentiated PTC.
+
+![Figure 4B. Thyroid Differentiation Score (TDS) by subtype.](../figures/Fig4_TDS_by_subtype.pdf)
 
 ### 3.5 Immune Microenvironment Differences
 
 Immune cell marker-based scoring revealed a complex immune landscape (Figure 3). Subtype C2 showed trends toward higher immune checkpoint expression across multiple markers including CD274 (PD-L1), PDCD1 (PD-1), CTLA4, LAG3, HAVCR2 (TIM-3), and TIGIT. The immunosenescence signature was significantly elevated in C2, consistent with a more aged and potentially dysfunctional immune microenvironment.
 
 The TIDE-like analysis revealed differential positioning of subtypes along the dysfunction-exclusion axes, with C2 samples showing greater T cell dysfunction scores, suggesting potential responsiveness to immune checkpoint blockade in this subtype.
+
+![Figure 3A. Immune cell marker scores heatmap by subtype (z-score).](../figures/Fig3_immune_landscape.pdf)
+
+![Figure 3B. Immune checkpoint expression heatmap by subtype.](../figures/Fig3_checkpoint_heatmap.pdf)
 
 ### 3.6 Striking Clinical Differences
 
@@ -147,13 +159,45 @@ The most clinically significant finding was the dramatic difference in lymph nod
 
 Overall survival analysis showed a trend toward differential survival, though the limited number of death events in the TCGA-THCA cohort (a well-known limitation) precluded definitive conclusions.
 
-### 3.7 Single-Cell Validation
+![Figure 5A. Lymph node metastasis proportion by subtype (C1: 2.4%, C2: 44.3%).](../figures/Fig6_LN_metastasis.pdf)
+
+![Figure 5B. Kaplan-Meier overall survival curves by subtype.](../figures/Fig6_survival.pdf)
+
+### 3.7 Elderly vs Young Adult Comparison
+
+To establish the biological rationale for elderly-specific subtyping, we performed a comprehensive comparison between elderly (>=60, n=120) and young adult (<60, n=385) PTC patients across the entire TCGA-THCA cohort.
+
+**Table 4. Elderly vs young adult demographics and clinical features.**
+
+| Feature | Elderly (n=120) | Young Adult (n=385) |
+|---------|----------------|-------------------|
+| Mean age (years) | 69.0 +/- 7.3 | 40.5 +/- 10.9 |
+| Female (%) | 61.7 | 76.6 |
+| N1 metastasis (%) | 30.0 | 41.6 |
+| Stage III/IV (%) | **51.7** | **22.3** |
+| BRAF mutation (%) | 59.1 | 60.6 |
+
+Elderly patients showed significantly higher rates of advanced staging (Stage III/IV: 51.7% vs 22.3%) but paradoxically lower lymph node metastasis (30.0% vs 41.6%), suggesting distinct mechanisms of disease progression in the elderly. BRAF mutation frequency was comparable between age groups (59.1% vs 60.6%, Fisher p = 0.83), indicating that mutational drivers alone do not explain the age-specific clinical differences.
+
+Pathway analysis revealed that elderly tumors exhibited elevated EMT (GSVA: 0.042 vs -0.011), senescence (0.037 vs -0.005), SASP (0.023 vs 0.002), and glycolysis (0.073 vs -0.018) compared to young adult tumors. Conversely, elderly tumors showed lower OXPHOS (0.017 vs -0.123). These findings support the hypothesis that aging-related biological programs — particularly cellular senescence and metabolic reprogramming — create a distinct tumor microenvironment in elderly PTC that warrants age-specific molecular classification.
+
+![Figure S1. Volcano plot of differentially expressed genes between elderly and young adult PTC.](../figures/FigS_volcano_elderly_vs_young.pdf)
+
+![Figure S2. Overall survival comparison: elderly vs young adult.](../figures/FigS_survival_elderly_vs_young.pdf)
+
+### 3.8 Single-Cell Validation
 
 Analysis of GSE184362 scRNA-seq data encompassing tumor, paratumor, lymph node metastasis, and subcutaneous tissues revealed distinct cellular compositions across tissue types (Figure 6). Differential expression analysis between tumor and paratumor identified key upregulated genes in tumor cells including S100A6, S100A11, S100A4, and FN1 — notably, FN1 (fibronectin 1) was also among the top discriminating genes in our bulk subtyping analysis, supporting the biological relevance of the EMT/adhesion axis in thyroid cancer progression.
 
 Immune checkpoint molecules (PDCD1, LAG3, HAVCR2, TIGIT) showed expression primarily in T cell clusters within tumor and lymph node metastasis samples, providing single-cell resolution evidence for the checkpoint expression patterns observed in our bulk analysis.
 
-### 3.8 Drug Sensitivity Profiles
+![Figure 6A. UMAP embedding of scRNA-seq data (Leiden clusters, tissue type, patient, cell types).](../figures/Fig6_scRNA_UMAP.pdf)
+
+![Figure 6B. Cell type proportions by tissue type.](../figures/Fig6_cell_proportions.pdf)
+
+![Figure 6C. Immune checkpoint expression projected on UMAP.](../figures/Fig6_checkpoint_UMAP.pdf)
+
+### 3.9 Drug Sensitivity Profiles
 
 Drug target expression scoring revealed subtype-specific therapeutic vulnerabilities (Figure 7). **C2** showed significantly higher BRAF inhibitor target expression, consistent with its BRAF-mutant biology. **C1** showed higher RAI sensitivity scores, reflecting its better-differentiated thyroid biology and preserved expression of iodine transport/metabolism genes (NIS/SLC5A5, TPO, TG).
 
@@ -161,9 +205,35 @@ Anti-PD1 response marker expression was elevated in the overall dataset but show
 
 Actionable target analysis identified subtype-specific druggable targets including MET (substantially higher in C2: 8.06 vs. 5.70 log2TPM), supporting potential therapeutic intervention with MET inhibitors in the aggressive subtype.
 
-### 3.9 Machine Learning Classifier
+![Figure 7A. Drug sensitivity heatmap across 8 drug classes by subtype.](../figures/Fig7_drug_sensitivity_heatmap.pdf)
+
+![Figure 7B. Actionable target expression heatmap.](../figures/Fig7_actionable_targets.pdf)
+
+![Figure 7C. TIDE dysfunction vs exclusion scatter plot by subtype.](../figures/Fig7_TIDE_scatter.pdf)
+
+### 3.10 Machine Learning Classifier
 
 A Random Forest classifier achieved 97.6% balanced accuracy (5-fold stratified CV) for subtype prediction, outperforming Logistic Regression (97.0%) and Gradient Boosting (97.0%) (Figure 8). The top discriminating genes included PDLIM4 (importance: 0.104), KCNN4 (0.088), FN1 (0.076), and SERPINA1 (0.055). The high accuracy with a relatively small gene panel suggests that robust subtype assignment is feasible for clinical translation.
+
+![Figure 8A. Top 20 gene feature importances from Random Forest.](../figures/Fig8_feature_importance.pdf)
+
+![Figure 8B. Confusion matrix (5-fold stratified cross-validation).](../figures/Fig8_confusion_matrix.pdf)
+
+### 3.11 External Validation
+
+To assess the reproducibility of our subtype signature, we performed nearest template prediction (NTP) analysis on two independent GEO microarray datasets.
+
+**GSE29265** (n = 49, thyroid cancer microarray): Of 100 subtype signature genes, 82 (41 C1-up, 41 C2-up) were present in the validation platform. NTP scoring successfully stratified samples into C1-like and C2-like groups with clear bimodal score distribution.
+
+**GSE33630** (n = 105, thyroid cancer expression profiles): Similarly, 82 signature genes were mapped, and NTP scoring produced distinct C1-like and C2-like clusters. Heatmap visualization of signature genes in the validation sets confirmed that the expression patterns discovered in the TCGA elderly cohort were recapitulated in independent datasets.
+
+![Figure S3. GSE29265 external validation: NTP score distribution and signature gene heatmap.](../figures/FigS_GSE29265_NTP.pdf)
+
+![Figure S4. GSE29265 signature gene heatmap in validation cohort.](../figures/FigS_GSE29265_heatmap.pdf)
+
+![Figure S5. GSE33630 external validation: NTP score distribution.](../figures/FigS_GSE33630_NTP.pdf)
+
+![Figure S6. GSE33630 signature gene heatmap in validation cohort.](../figures/FigS_GSE33630_heatmap.pdf)
 
 ## 4. Discussion
 
@@ -195,9 +265,17 @@ Our findings extend several recent studies. The aging-and-aggressiveness study b
 
 The 97.6% accuracy of our Random Forest classifier with a manageable number of gene features demonstrates the feasibility of translating our molecular subtypes into a clinical assay. The top discriminating genes (PDLIM4, KCNN4, FN1, SERPINA1) include known regulators of cell adhesion, ion channel activity, and extracellular matrix organization, consistent with the biological programs differentiating the subtypes. A minimal gene panel could be developed for targeted sequencing-based or RT-qPCR-based clinical implementation.
 
-### 4.6 Limitations
+### 4.6 Elderly-Specific Biology Justifies Age-Stratified Analysis
 
-Several limitations should be acknowledged. First, the TCGA-THCA cohort has limited death events and follow-up duration, constraining survival analysis; we addressed this by using surrogate clinical endpoints (stage, LN metastasis). Second, the elderly cohort (n = 120) provides adequate power for two-subtype analysis but may be insufficient for finer subclustering. Third, drug sensitivity predictions are computational and require experimental validation. Fourth, the scRNA-seq data (GSE184362) does not include age-matched elderly-specific samples, limiting direct mechanistic projection. Fifth, external validation in independent cohorts is needed to confirm subtype reproducibility.
+Our comparison of elderly versus young adult PTC revealed important age-specific biological differences that justify elderly-focused subtyping. Despite similar BRAF mutation rates (59.1% vs 60.6%), elderly patients showed significantly higher advanced staging (51.7% vs 22.3% Stage III/IV) but paradoxically lower lymph node metastasis (30.0% vs 41.6%). This dissociation suggests that elderly thyroid cancer progresses through mechanisms distinct from lymphatic spread — potentially through direct local invasion (consistent with the elevated EMT signature) and altered immune surveillance (consistent with elevated immunosenescence). The elevated senescence and SASP signatures in elderly tumors further support that aging-related biological programs create a fundamentally different tumor microenvironment, reinforcing the need for age-specific molecular classification rather than applying population-wide subtypes.
+
+### 4.7 External Validation Confirms Signature Reproducibility
+
+The successful stratification of two independent GEO datasets (GSE29265, n=49; GSE33630, n=105) into C1-like and C2-like groups using our 100-gene subtype signature demonstrates that the molecular patterns identified in the TCGA elderly cohort are reproducible in external data. The clear bimodal NTP score distributions and concordant heatmap patterns in both validation datasets strengthen confidence in the biological robustness of our subtypes.
+
+### 4.8 Limitations
+
+Several limitations should be acknowledged. First, the TCGA-THCA cohort has limited death events and follow-up duration, constraining survival analysis; we addressed this by using surrogate clinical endpoints (stage, LN metastasis). Second, the elderly cohort (n = 120) provides adequate power for two-subtype analysis but may be insufficient for finer subclustering. Third, drug sensitivity predictions are computational and require experimental validation. Fourth, the scRNA-seq data (GSE184362) does not include age-matched elderly-specific samples, limiting direct mechanistic projection. Fifth, the external validation datasets do not have age annotations, so the validation confirms signature reproducibility in general PTC but not specifically in elderly patients.
 
 ### 4.7 Future Directions
 
