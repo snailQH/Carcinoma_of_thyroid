@@ -1,0 +1,32 @@
+name: thyroid_py
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.11
+  - scanpy
+  - anndata
+  - leidenalg
+  - scvi-tools
+  - cellrank
+  - squidpy
+  - scikit-learn
+  - xgboost
+  - lightgbm
+  - matplotlib
+  - seaborn
+  - pandas
+  - numpy
+  - scipy
+  - statsmodels
+  - jupyter
+  - openpyxl
+  - python-pptx
+  - adjusttext
+  - pip
+  - pip:
+    - infercnvpy
+    - celltypist
+    - decoupler
+    - omnipath

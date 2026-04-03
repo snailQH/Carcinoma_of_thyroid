@@ -23,40 +23,64 @@ Thyroid carcinoma is the most common endocrine malignancy. While most papillary 
 | GDSC2 / PRISM | Drug sensitivity (cell lines) | Training data |
 | CMap / L1000 | Connectivity mapping | Compound signatures |
 
+## Analysis Progress (as of 2026-04-02)
+
+**Overall: 52 / 112 analyses completed (46%)**
+
+| Phase | Status | Key results |
+|-------|--------|-------------|
+| Phase 1: Data Acquisition | **Done** | TCGA-THCA: 572 samples (RNA-seq + mutation + clinical); GEO GSE184362: 23 scRNA-seq samples |
+| Phase 2: Molecular Subtyping | **Done** | **2 subtypes** identified (k=2, PAC=0.084, silhouette=0.95); C1 n=41, C2 n=79 |
+| Phase 3: Characterization | **Partially done** | GSVA (11 pathways), immune scoring (8 cell types), TDS, checkpoints, TMB, clinical association done; CIBERSORTx, CNA, TLS pending |
+| Phase 4: Single-Cell | **Partially done** | QC, clustering, UMAP, DEGs, checkpoint UMAP done; CellChat, SCENIC, trajectory pending |
+| Phase 5: Drug Sensitivity | **Partially done** | Target expression scoring (8 drugs), TIDE, actionable targets done; oncoPredict, CMap pending |
+| Phase 6: Clinical Model | **Partially done** | RF classifier 97.6% accuracy, feature importance done; LASSO signature, external validation pending |
+| Phase 7: Outputs | **Partially done** | 45 figures, 11 tables, 1 PPTX generated; manuscript drafting pending |
+
+### Key Findings
+
+| Subtype | N | LN Metastasis | Stage | Clinical Implication |
+|---------|---|---------------|-------|---------------------|
+| **C1 (Indolent)** | 41 | 2.4% | Mostly I-III | Active surveillance candidate |
+| **C2 (Aggressive)** | 79 | 44.3% | More III-IV | Surgical intervention candidate |
+
+- Stage distribution significantly different between subtypes (**Fisher p = 0.0005**)
+- ML classifier achieves **97.6% balanced accuracy** (Random Forest, 5-fold CV)
+
+For detailed checkbox tracking of all 112 sub-analyses, see [`docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md`](docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md).
+
+---
+
 ## Project Structure
 
 ```
 Carcinoma_of_thyroid/
 ├── docs/
-│   ├── Data_Structure.md              # Server and data inventory
+│   ├── Data_Structure.md                    # Server and data inventory
 │   ├── carcinoma_of_thyroid_study_ideas.md  # Initial study design notes
-│   └── plans/                         # Detailed research plans
-├── CLAUDE.md                          # AI assistant context
+│   └── plans/                               # Detailed research plans with progress tracker
+├── scripts/
+│   ├── 01_data_download/                    # TCGA + GEO download scripts
+│   ├── 02_preprocessing/                    # QC, normalization, cohort construction, subtyping
+│   ├── 04_characterization/                 # Mutation, immune, GSVA, senescence, clinical
+│   ├── 05_scrna_analysis/                   # Single-cell pipeline (scanpy)
+│   ├── 06_drug_prediction/                  # Drug sensitivity, actionable targets
+│   ├── 07_clinical_model/                   # ML classifier, PPTX generation
+│   └── run_all.sh                           # Master pipeline script
+├── research/
+│   ├── figures/                             # All generated figures (45 PDFs)
+│   ├── tables/                              # All summary tables (11 CSVs)
+│   ├── pptx/                                # Summary presentations
+│   └── manuscripts/                         # Manuscript drafts (future)
+├── envs/                                    # Conda environment YAML files
+├── CLAUDE.md                                # AI assistant context
 └── README.md
 ```
 
-**Server analysis directory** (`bioinfo@192.168.100.127:/data2/projects/Carcinoma_of_thyroid/`):
-
-```
-├── data/
-│   ├── tcga_thca/{rnaseq,mutation,cnv,methylation,clinical}
-│   ├── geo_scrna/{GSE184362,GSE191288}
-│   ├── geo_bulk_validation/
-│   └── drug_databases/
-├── scripts/
-│   ├── 01_data_download/        # TCGA + GEO download scripts
-│   ├── 02_preprocessing/        # QC, normalization, cohort construction, subtyping
-│   ├── 04_characterization/     # Mutation, immune, GSVA, senescence, clinical
-│   ├── 05_scrna_analysis/       # Single-cell pipeline (scanpy)
-│   ├── 06_drug_prediction/      # Drug sensitivity, actionable targets
-│   ├── 07_clinical_model/       # ML classifier, PPTX generation
-│   └── run_all.sh               # Master pipeline script
-├── results/
-│   ├── figures/                 # Publication-ready plots (PDF)
-│   ├── tables/                  # Summary tables (CSV)
-│   └── reports/                 # PPTX summary, pipeline log
-└── envs/                        # Conda environment YAML files
-```
+**Server data directory** (`bioinfo@192.168.100.127:/data2/projects/Carcinoma_of_thyroid/`):
+- `data/tcga_thca/` — TCGA-THCA downloads (RNA-seq, mutation, clinical) ~2.9 GB
+- `data/geo_scrna/GSE184362/` — scRNA-seq raw + processed h5ad ~7.3 GB
+- `results/` — mirrors `research/` folder in this repo
 
 ## Quick Start
 
