@@ -1,0 +1,5 @@
+"age_group","mol_class","n","N1_pct","adv_stage_pct","sen_mean"
+"Elderly","BRAF-like",67,40.3,59.7,0.1211
+"Elderly","RAS-like",12,0,41.7,-0.2761
+"Young","BRAF-like",220,48.2,27.3,0.0964
+"Young","RAS-like",47,19.1,17,-0.2678

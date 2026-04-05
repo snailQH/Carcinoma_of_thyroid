@@ -129,7 +129,8 @@
 - [x] 92am. Senescence scatter plots vs age (7 signatures)
 - [x] 92an. Forest plot for multivariate predictors
 
-- [x] 92ao. Transcriptomic age predictor (14 up + 12 down aging genes)
+- [x] 92ao. C1/C2 specificity analysis: BRAF/RAS effect amplification in elderly (RAS-like elderly = 0% LN met)
+- [x] 92ao2. Transcriptomic age predictor (14 up + 12 down aging genes)
 - [x] 92ap. Age acceleration: C2 = +0.280, C1 = -0.461, p = 4.5e-12
 - [x] 92aq. Age acceleration vs senescence correlation (rho=0.28, p=1.8e-10)
 - [x] 92ar. Age acceleration by LN status and AJCC stage
@@ -172,7 +173,7 @@
 - [x] 97a. Manuscript draft v1 with embedded figures and elderly vs young section
 - [x] 97b. External validation section added to manuscript
 
-**Summary: 82 of 139 analyses completed (59%)**
+**Summary: 84 of 140 analyses completed (60%)**
 
 ---
 

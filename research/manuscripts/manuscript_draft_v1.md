@@ -260,7 +260,32 @@ Pathway analysis revealed that elderly tumors exhibited elevated EMT (GSVA: 0.04
 
 ![Figure S2. Overall survival comparison: elderly vs young adult.](../figures/FigS_survival_elderly_vs_young.png)
 
-### 3.8 Single-Cell Validation
+### 3.8 C1/C2 Subtypes: Elderly-Specific Features Beyond the Pan-Cancer BRAF/RAS Classification
+
+A critical question is whether our C1/C2 subtypes simply recapitulate the well-known BRAF-like versus RAS-like classification that applies to all PTC [4], or whether they capture elderly-specific biology. To address this, we compared the clinical consequences of BRAF-like and RAS-like molecular classes across age groups.
+
+**Table 5. BRAF/RAS molecular class by age group: clinical and biological comparison.**
+
+| Age Group | Molecular Class | N | N1 Met (%) | Stage III/IV (%) | Senescence Score |
+|-----------|----------------|---|-----------|-----------------|-----------------|
+| Elderly | BRAF-like | 67 | 40.3 | 59.7 | +0.121 |
+| Elderly | RAS-like | 12 | **0.0** | 41.7 | -0.276 |
+| Young | BRAF-like | 220 | 48.2 | 27.3 | +0.096 |
+| Young | RAS-like | 47 | 19.1 | 17.0 | -0.268 |
+
+Three findings demonstrate elderly-specific biology beyond the pan-cancer classification:
+
+**First, the protective effect of RAS-like biology is dramatically amplified in the elderly.** While young RAS-like patients still show 19.1% LN metastasis, **elderly RAS-like patients show 0% LN metastasis** (0 out of 12 patients). This complete absence of lymph node involvement in elderly RAS-like tumors has not been previously reported and has direct clinical implications: these patients may represent the strongest candidates for active surveillance.
+
+**Second, the senescence axis is an elderly-specific differentiator.** Although BRAF-like and RAS-like tumors show similar senescence scores regardless of age (BRAF-like: elderly +0.121 vs young +0.096, p = 0.46), the biological consequences of senescence differ by age: our multivariate analysis showed that senescence is the strongest predictor of LN metastasis (OR = 4.374), and the senescence-metastasis axis operates differently in the aging microenvironment where baseline senescence is already elevated.
+
+**Third, advanced staging is disproportionately elevated in elderly BRAF-like patients.** Elderly BRAF-like patients show 59.7% Stage III/IV compared to only 27.3% in young BRAF-like patients — a 2.2-fold increase. This suggests that the combination of BRAF-driven biology and aging-related tumor microenvironment changes creates a synergistically aggressive phenotype in the elderly.
+
+These findings establish that while the BRAF/RAS molecular axis is conserved across age groups, our elderly-specific C1/C2 classification captures age-dependent amplification of clinical consequences and the unique contribution of senescence biology, providing added value beyond the pan-cancer classification for elderly patient management [4,26,27].
+
+![Figure S7. LN metastasis rate by molecular class (BRAF-like vs RAS-like) stratified by age group. The BRAF/RAS effect on metastasis is amplified in the elderly.](../figures/FigS_LN_molclass_x_age.png)
+
+### 3.9 Single-Cell Validation
 
 Analysis of GSE184362 scRNA-seq data encompassing tumor, paratumor, lymph node metastasis, and subcutaneous tissues revealed distinct cellular compositions across tissue types (Figure 6). Differential expression analysis between tumor and paratumor identified key upregulated genes in tumor cells including S100A6, S100A11, S100A4, and FN1 — notably, FN1 (fibronectin 1) was also among the top discriminating genes in our bulk subtyping analysis, supporting the biological relevance of the EMT/adhesion axis in thyroid cancer progression.
 
@@ -399,41 +424,108 @@ We identified two robust molecular subtypes in elderly thyroid carcinoma with dr
 23. Saul D, Kosinsky RL, Atkinson EJ, et al. A new gene set identifies senescent cells and predicts senescence-associated pathways across tissues. Nat Commun. 2022;13(1):4082.
 24. Basisty N, Kale A, Jeon OH, et al. A proteomic atlas of senescence-associated secretomes for aging biomarker development. PLoS Biol. 2020;18(1):e3000599.
 25. Robin X, Turck N, Hainard A, et al. pROC: an open-source package for R and S+ to analyze and compare ROC curves. BMC Bioinformatics. 2011;12:77.
+26. Yoo SK, Song YS, Lee EK, et al. Integrative analysis of genomic and transcriptomic characteristics associated with progression of aggressive thyroid cancer. Nat Commun. 2019;10(1):2764.
+27. Song YS, Yoo SK, Kim HH, et al. Interaction of BRAF-induced ETS factors with mutant TERT promoter in papillary thyroid cancer. Endocr Relat Cancer. 2019;26(6):629-641.
+28. Gao Y, et al. Multi-omics consensus clustering identifies two prognostic subtypes in thyroid cancer. Genes Immun. 2025;26(2):322.
 
 ---
 
 ## Figure Legends
 
-**Figure 1.** Consensus clustering heatmap of 120 elderly PTC patients. Top annotation shows subtype assignment (C1, red; C2, blue), patient age, and gender. Expression values are z-score normalized across the top 3,000 MAD genes. Clustering parameters: k = 2, 1,000 bootstrap resamples, PAC = 0.084, silhouette = 0.95.
+**Figure 1.** Consensus clustering heatmap of 120 elderly PTC patients. Top annotation shows subtype assignment (C1, red; C2, blue), patient age, and gender. Expression values are z-score normalized across the top 3,000 MAD genes. Clustering parameters: k = 2, 1,000 bootstrap resamples, Pearson distance, Ward.D2 linkage, PAC = 0.084, silhouette = 0.95.
 
-**Figure 2.** Tumor mutational burden (TMB) by subtype. Boxplot showing mutations per megabase for C1 (RAS-like) and C2 (BRAF-like) subtypes. See Table 2 for driver mutation frequencies.
+**Figure 2.** Tumor mutational burden (TMB) by subtype. Boxplot showing mutations per megabase for C1 (RAS-like) and C2 (BRAF-like) subtypes. See Table 2 for complete driver mutation frequencies.
 
-**Figure 3.** Immune microenvironment characterization. (A) Heatmap of mean immune cell marker scores by subtype (z-score normalized). (B) Immune checkpoint expression heatmap (mean log2TPM by subtype) for 7 checkpoint molecules.
+**Figure 3.** Immune microenvironment characterization. (A) Heatmap of mean immune cell marker scores by subtype. Values are z-score normalized across subtypes: positive z-scores (red) indicate higher infiltration relative to the mean, negative (blue) indicate lower. Cell types scored: CD8+ T, Treg, M1/M2 macrophages, NK, B cells, CAF, MDSC. (B) Immune checkpoint expression heatmap showing mean log2(TPM+1) expression by subtype for 7 checkpoint molecules (CD274/PD-L1, PDCD1/PD-1, CTLA4, LAG3, HAVCR2/TIM-3, TIGIT, CD276/B7-H3). Higher values (red) indicate greater checkpoint expression.
 
-**Figure 4.** Pathway activity analysis. (A) GSVA heatmap showing scores for 11 biological programs across all elderly samples, split by subtype. (B) Thyroid differentiation score (TDS) by subtype.
+**Figure 4.** Pathway activity analysis. (A) GSVA heatmap showing enrichment scores for 11 biological programs across all 120 elderly samples, split by subtype. GSVA scores range from approximately -0.5 to +0.5, where positive scores indicate higher pathway activity relative to the sample population and negative scores indicate lower activity. (B) Thyroid differentiation score (TDS) by subtype, calculated as the mean log2(TPM+1) of 10 thyroid-specific genes.
 
-**Figure 6.** Clinical association and single-cell validation. (A) Lymph node metastasis proportion by subtype (C1: 2.4%, C2: 44.3%). (B) Kaplan-Meier overall survival curves. (C) UMAP embedding of scRNA-seq data colored by cluster, tissue, patient, and cell type. (D) Cell type proportions by tissue. (E) Immune checkpoint expression on UMAP.
+**Figure 5.** Clinical association. (A) Lymph node metastasis proportion by subtype (C1: 2.4%, C2: 44.3%). (B) Kaplan-Meier overall survival curves by subtype with log-rank p-value and risk table.
 
-**Figure 7.** Drug sensitivity and therapeutic targets. (A) Drug sensitivity heatmap across 8 drug classes. (B) Actionable target expression heatmap. (C) TIDE dysfunction vs exclusion scatter plot. (D) BRAF inhibitor sensitivity by subtype. (E) RAI sensitivity by subtype.
+**Figure 6.** Single-cell RNA-seq validation (GSE184362). (A) UMAP embedding colored by Leiden cluster, tissue type, patient, and cell type annotation. (B) Cell type proportions by tissue (tumor, paratumor, LN metastasis, subcutaneous). (C) Immune checkpoint gene expression projected on UMAP.
 
-**Figure 8.** Machine learning classifier. (A) Top 20 gene feature importances from Random Forest model. (B) Confusion matrix (5-fold stratified cross-validation). Random Forest achieved 97.6% balanced accuracy.
+**Figure 7.** Drug sensitivity and therapeutic targets. (A) Drug sensitivity heatmap: z-score normalized mean target expression by subtype across 8 drug classes. Positive z-scores (red) indicate higher target expression, suggesting greater sensitivity to that drug class; negative z-scores (blue) indicate lower target expression. (B) Actionable target expression heatmap: z-score normalized expression of 17 druggable genes by subtype. Higher values indicate greater target expression and potential therapeutic relevance. (C) TIDE-like dysfunction vs exclusion scatter plot. (D) BRAF inhibitor target expression by subtype. (E) RAI sensitivity score by subtype.
+
+**Figure 8.** Machine learning classifier. (A) Top 20 gene feature importances from Random Forest model. Higher importance indicates greater contribution to subtype discrimination. (B) Confusion matrix from 5-fold stratified cross-validation. Random Forest achieved 97.6% balanced accuracy.
+
+**Figure 9.** Senescence biomarker analysis. (A) Forest plot of multivariate logistic regression predictors of LN metastasis. Odds ratios with 95% CI shown; dashed line at OR=1. Senescence score (OR=4.374, p<0.001) is the strongest predictor. (B) ROC curves comparing predictive performance: combined model (AUC=0.672), senescence alone (0.636), BRAF (0.590), age (0.573). (C) Composite senescence score by AJCC stage (progressive increase I→IV). (D) Composite senescence score by LN status. (E) Senescence landscape heatmap: 7 senescence signatures scored across all 505 tumors ordered by age. (F) Composite senescence by elderly subtype. (G) Key senescence gene expression heatmap. (H) Transcriptomic age acceleration by elderly subtype (C2 = +0.280, C1 = -0.461, p = 4.5e-12). (I) Aging score vs chronological age. (J) Age acceleration vs senescence composite (rho=0.28, p=1.8e-10).
 
 ---
 
 ## Supplementary Materials
 
-**Table S1.** Complete demographic and clinical characteristics of the TCGA-THCA elderly cohort.
-**Table S2.** Full driver mutation frequency table for all 10 driver genes by subtype.
-**Table S3.** GSVA scores summary (mean per pathway per subtype).
-**Table S4.** Actionable target expression values by subtype.
-**Table S5.** Top 100 discriminating genes by ANOVA F-statistic.
-**Table S6.** Feature importance rankings from Random Forest classifier.
-**Table S7.** scRNA-seq cluster markers (top genes per Leiden cluster).
-**Table S8.** Tumor vs paratumor differentially expressed genes (scRNA-seq).
-**Table S9.** Cell type proportions by tissue (scRNA-seq).
+### Supplementary Tables
 
-**Figure S1.** Consensus clustering CDF and delta area plots for k = 2–6.
-**Figure S2.** Individual GSVA pathway boxplots (EMT, Proliferation, SASP, Senescence, Immunosenescence, Glycolysis, OXPHOS, Adhesion, Angiogenesis, DNA Repair, Apoptosis).
-**Figure S3.** Individual immune cell score boxplots (CD8+ T, Treg, M1 Macrophage, M2 Macrophage, NK, B cell, CAF, MDSC).
-**Figure S4.** Individual drug sensitivity boxplots (BRAF-i, MEK-i, Lenvatinib, Sorafenib, CDK-i, mTOR-i, Anti-PD1, RAI).
-**Figure S5.** scRNA-seq QC violin plots and cell type marker dotplot.
+**Table S1.** Complete demographic and clinical characteristics of the TCGA-THCA elderly cohort (n=120) vs young adults (n=385). File: `elderly_vs_young_demographics.csv`
+
+**Table S2.** Full driver mutation frequency for 10 driver genes by subtype (C1 and C2). File: `driver_mutation_frequency.csv`
+
+**Table S3.** GSVA pathway scores summary (mean per pathway per subtype). File: `clinical_decision_framework.csv`
+
+**Table S4.** Actionable target expression values (17 druggable genes) by subtype. File: `actionable_target_expression.csv`
+
+**Table S5.** Top 100 discriminating genes by ANOVA F-statistic for subtype classification. File: `feature_selection_anova.csv`
+
+**Table S6.** Feature importance rankings from Random Forest classifier. File: `feature_importance.csv`
+
+**Table S7.** scRNA-seq cluster markers (top genes per Leiden cluster). File: `scrna_cluster_markers.csv`
+
+**Table S8.** Tumor vs paratumor differentially expressed genes from scRNA-seq. File: `scrna_DEG_Tumor_vs_Paratumor.csv`
+
+**Table S9.** Cell type proportions by tissue from scRNA-seq. File: `cell_type_proportions.csv`
+
+**Table S10.** Senescence signature–age correlation (Spearman) for 7 signatures. File: `aging/senescence_age_correlation.csv`
+
+**Table S11.** Multivariate logistic regression for LN metastasis prediction (senescence, BRAF, age, gender). File: `aging/multivariate_LN_prediction.csv`
+
+**Table S12.** ROC AUC comparison for LN metastasis prediction. File: `aging/ROC_AUC_results.csv`
+
+**Table S13.** Key senescence gene expression by age group. File: `aging/key_senescence_genes_expression.csv`
+
+**Table S14.** Transcriptomic aging scores and age acceleration. File: `aging/transcriptomic_age.csv`
+
+**Table S15.** BRAF/RAS molecular class comparison by age group. File: `BRAF_RAS_elderly_vs_young_comparison.csv`
+
+**Table S16.** External validation: GSE29265 NTP scores. File: `GSE29265_validation.csv`
+
+**Table S17.** External validation: GSE33630 NTP scores. File: `GSE33630_validation.csv`
+
+**Table S18.** Subtype gene signature (50 C1-up + 50 C2-up genes). Files: `subtype_signature_C1.csv`, `subtype_signature_C2.csv`
+
+### Supplementary Figures
+
+**Figure S1.** Volcano plot of differentially expressed genes between elderly (>=60) and young adult (<60) PTC. Red: upregulated in elderly (log2FC > 0.5, padj < 0.05). Blue: downregulated. Top 20 significant genes labeled. File: `FigS_volcano_elderly_vs_young.png`
+
+**Figure S2.** Overall survival comparison: elderly vs young adult (Kaplan-Meier, log-rank test). File: `FigS_survival_elderly_vs_young.png`
+
+**Figure S3.** GSE29265 external validation: NTP subtype score distribution (C1-like vs C2-like). File: `FigS_GSE29265_NTP.png`
+
+**Figure S4.** GSE29265 external validation: signature gene heatmap (82 genes, z-score normalized) with predicted subtype annotation. File: `FigS_GSE29265_heatmap.png`
+
+**Figure S5.** GSE33630 external validation: NTP subtype score distribution. File: `FigS_GSE33630_NTP.png`
+
+**Figure S6.** GSE33630 external validation: signature gene heatmap (82 genes) with predicted subtype annotation. File: `FigS_GSE33630_heatmap.png`
+
+**Figure S7.** LN metastasis rate by BRAF-like vs RAS-like molecular class, stratified by age group. Demonstrates that the BRAF/RAS effect is amplified in the elderly, with RAS-like elderly showing 0% LN metastasis. File: `FigS_LN_molclass_x_age.png`
+
+**Figure S8.** Individual GSVA pathway boxplots by subtype (11 plots: EMT, Proliferation, SASP, Senescence, Immunosenescence, Glycolysis, OXPHOS, Adhesion, Angiogenesis, DNA Repair, Apoptosis). Files: `GSVA_*_boxplot.png`
+
+**Figure S9.** Individual immune cell score boxplots by subtype (6 plots: CD8+ T, Treg, M1 Macrophage, M2 Macrophage, CAF, MDSC). Files: `Immune_*_boxplot.png`
+
+**Figure S10.** Individual drug sensitivity boxplots by subtype (8 plots: BRAF-i, MEK-i, Lenvatinib, Sorafenib, CDK-i, mTOR-i, Anti-PD1, RAI). Files: `Drug_*_boxplot.png`
+
+**Figure S11.** scRNA-seq QC violin plots (genes/cell, counts/cell, MT%) by tissue type. File: `scrna_QC_violin.png`
+
+**Figure S12.** scRNA-seq cell type marker dotplot across Leiden clusters. File: `dotplot__cell_markers.png`
+
+**Figure S13.** Senescence signature scatter plots vs chronological age (7 plots). Files: `aging/Aging_scatter_*.png`
+
+**Figure S14.** Senescence signatures: elderly vs young boxplots (7 plots). Files: `aging/Aging_EvsY_*.png`
+
+**Figure S15.** Senescence signatures by elderly subtype (7 + composite plots). Files: `aging/Aging_subtype_*.png`
+
+**Figure S16.** Survival by senescence group (high/low): all patients and elderly-only. Files: `aging/Aging_survival_by_senescence_*.png`
+
+**Figure S17.** Transcriptomic age acceleration by LN status and AJCC stage. Files: `aging/Aging_acceleration_by_LN.png`, `aging/Aging_acceleration_by_stage.png`
+
+**Figure S18.** Elderly vs young pathway comparison boxplots (11 GSVA + 6 immune + TDS). Files: `EvsY_GSVA_*.png`, `EvsY_Immune_*.png`

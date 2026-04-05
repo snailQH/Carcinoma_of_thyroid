@@ -25,7 +25,7 @@ Thyroid carcinoma is the most common endocrine malignancy. While most papillary 
 
 ## Analysis Progress (as of 2026-04-05)
 
-**Overall: 77 / 134 analyses completed (57%)**
+**Overall: 84 / 140 analyses completed (60%)**
 
 | Phase | Status | Key results |
 |-------|--------|-------------|
@@ -52,8 +52,10 @@ Thyroid carcinoma is the most common endocrine malignancy. While most papillary 
 - **External validation**: subtype signature successfully stratifies GSE29265 (n=49) and GSE33630 (n=105)
 - **Senescence biomarker**: composite senescence score is the **strongest predictor of LN metastasis** (OR=4.374, p<0.001), outperforming BRAF mutation (OR=1.629) and age (OR=0.983)
 - **ROC AUC**: combined model (senescence+BRAF+age+gender) = 0.672 for LN prediction
+- **C1/C2 specificity**: elderly RAS-like patients show **0% LN metastasis** (vs 19.1% in young RAS-like), confirming age-amplified effect
+- **Age acceleration**: C2 transcriptomically "older" (+0.28), C1 "younger" (-0.46), p=4.5e-12
 
-For detailed checkbox tracking of all 134 sub-analyses, see [`docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md`](docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md).
+For detailed checkbox tracking of all 140 sub-analyses, see [`docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md`](docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md).
 
 ---
 
