@@ -195,6 +195,20 @@ A heatmap of 20 key senescence genes (CDKN1A, CDKN2A, TP53, GLB1, SERPINE1, LMNB
 
 ![Figure 9G. Key senescence gene expression heatmap across all PTC patients, annotated by age group and subtype.](../figures/aging/Aging_key_genes_heatmap.pdf)
 
+#### 3.5.8 Transcriptomic Age Acceleration
+
+To further link aging biology with tumor behavior, we computed a transcriptomic aging score using 14 aging-upregulated genes (CDKN2A, CDKN1A, GLB1, SERPINE1, GDF15, IGFBP3, IGFBP7, IL6, CCL2, CXCL1, FN1, TGFB1, HMGA2, TP53) and 12 aging-downregulated genes (TERT, MKI67, PCNA, TOP2A, MCM2, CCNB1, CDK1, AURKA, IL7R, TCF7, LEF1, CCR7). Age acceleration was defined as the residual from regressing the aging score on chronological age.
+
+Strikingly, the aggressive C2 subtype showed **positive age acceleration** (mean = +0.280) while the indolent C1 subtype showed **negative age acceleration** (mean = -0.461; t-test p = 4.5 x 10^-12) (Figure 9H). This indicates that C2 tumors exhibit a transcriptomically "older" phenotype than expected for their chronological age, while C1 tumors appear transcriptomically "younger."
+
+Age acceleration was significantly correlated with the composite senescence score (Spearman rho = 0.280, p = 1.8 x 10^-10), confirming convergent evidence from both scoring approaches. Patients with N1 lymph node metastasis also showed higher age acceleration (mean = +0.175) compared to N0 patients (mean = -0.111).
+
+![Figure 9H. Transcriptomic age acceleration by elderly subtype (C1 vs C2, p=4.5e-12).](../figures/aging/Aging_acceleration_by_subtype.pdf)
+
+![Figure 9I. Transcriptomic aging score vs chronological age across all PTC patients.](../figures/aging/Aging_RNAAge_scatter.pdf)
+
+![Figure 9J. Age acceleration vs composite senescence score (rho=0.28, p=1.8e-10).](../figures/aging/Aging_acceleration_vs_senescence.pdf)
+
 ### 3.6 Immune Microenvironment Differences
 
 Immune cell marker-based scoring revealed a complex immune landscape (Figure 3). Subtype C2 showed trends toward higher immune checkpoint expression across multiple markers including CD274 (PD-L1), PDCD1 (PD-1), CTLA4, LAG3, HAVCR2 (TIM-3), and TIGIT. The immunosenescence signature was significantly elevated in C2, consistent with a more aged and potentially dysfunctional immune microenvironment.

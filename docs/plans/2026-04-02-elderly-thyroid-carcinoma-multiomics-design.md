@@ -129,6 +129,12 @@
 - [x] 92am. Senescence scatter plots vs age (7 signatures)
 - [x] 92an. Forest plot for multivariate predictors
 
+- [x] 92ao. Transcriptomic age predictor (14 up + 12 down aging genes)
+- [x] 92ap. Age acceleration: C2 = +0.280, C1 = -0.461, p = 4.5e-12
+- [x] 92aq. Age acceleration vs senescence correlation (rho=0.28, p=1.8e-10)
+- [x] 92ar. Age acceleration by LN status and AJCC stage
+- [x] 92as. Aging score scatter plots (6 figures)
+
 ### Phase 6B: Elderly vs Young Adult Comparison (NEW)
 - [x] 92a. Elderly vs young demographics comparison (120 vs 385 patients)
 - [x] 92b. DEG analysis: elderly vs young (volcano plot, t-test per gene)
@@ -166,7 +172,7 @@
 - [x] 97a. Manuscript draft v1 with embedded figures and elderly vs young section
 - [x] 97b. External validation section added to manuscript
 
-**Summary: 77 of 134 analyses completed (57%)**
+**Summary: 82 of 139 analyses completed (59%)**
 
 ---
 
