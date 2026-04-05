@@ -1,0 +1,5 @@
+"Variable","OR","CI_lower","CI_upper","p_value"
+"Age",0.983,0.971,0.995,0.0059
+"Senescence Score",4.374,2.106,9.21,1e-04
+"BRAF Mutation",1.629,1.081,2.462,0.02
+"Gender (Female)",0.568,0.372,0.865,0.0085

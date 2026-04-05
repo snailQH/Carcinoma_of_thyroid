@@ -23,20 +23,21 @@ Thyroid carcinoma is the most common endocrine malignancy. While most papillary 
 | GDSC2 / PRISM | Drug sensitivity (cell lines) | Training data |
 | CMap / L1000 | Connectivity mapping | Compound signatures |
 
-## Analysis Progress (as of 2026-04-03)
+## Analysis Progress (as of 2026-04-05)
 
-**Overall: 63 / 120 analyses completed (53%)**
+**Overall: 77 / 134 analyses completed (57%)**
 
 | Phase | Status | Key results |
 |-------|--------|-------------|
 | Phase 1: Data Acquisition | **Done** | TCGA-THCA: 572 samples (RNA-seq + mutation + clinical); GEO GSE184362: 23 scRNA-seq samples |
 | Phase 2: Molecular Subtyping | **Done** | **2 subtypes** identified (k=2, PAC=0.084, silhouette=0.95); C1 n=41, C2 n=79 |
-| Phase 3: Characterization | **Partially done** | GSVA (11 pathways), immune scoring (8 cell types), TDS, checkpoints, TMB, clinical association done; CIBERSORTx, CNA, TLS pending |
-| Phase 4: Single-Cell | **Partially done** | QC, clustering, UMAP, DEGs, checkpoint UMAP done; CellChat, SCENIC, trajectory pending |
-| Phase 5: Drug Sensitivity | **Partially done** | Target expression scoring (8 drugs), TIDE, actionable targets done; oncoPredict, CMap pending |
-| Phase 6: Clinical Model | **Partially done** | RF classifier 97.6% accuracy, external validation done (GSE29265, GSE33630); LASSO signature pending |
-| Phase 6B: Elderly vs Young | **Done** | DEGs, GSVA, immune, mutations, clinical, survival comparison (8 sub-analyses) |
-| Phase 7: Outputs | **In progress** | 55+ figures, 15+ tables, 17-slide PPTX with speaker notes, manuscript draft v1 with embedded figures |
+| Phase 3: Characterization | **Partially done** | GSVA (11 pathways), immune scoring (8 cell types), TDS, checkpoints, TMB, clinical association done |
+| Phase 4: Single-Cell | **Partially done** | QC, clustering, UMAP, DEGs, checkpoint UMAP done; CellChat, SCENIC pending |
+| Phase 5: Drug Sensitivity | **Partially done** | Target expression scoring (8 drugs), TIDE, actionable targets done |
+| Phase 6: Clinical Model | **Partially done** | RF classifier 97.6%, external validation done (GSE29265, GSE33630) |
+| **Phase 6A: Aging/Senescence** | **Done** | **7 senescence signatures, multivariate: senescence OR=4.374 (p<0.001), ROC AUC=0.672** |
+| Phase 6B: Elderly vs Young | **Done** | DEGs, GSVA, immune, mutations, clinical, survival comparison |
+| Phase 7: Outputs | **In progress** | 85+ figures, 20+ tables, 17-slide PPTX, manuscript draft v1 with figures |
 
 ### Key Findings
 
@@ -49,8 +50,10 @@ Thyroid carcinoma is the most common endocrine malignancy. While most papillary 
 - ML classifier achieves **97.6% balanced accuracy** (Random Forest, 5-fold CV)
 - **Elderly vs Young**: elderly show higher Stage III/IV (51.7% vs 22.3%), higher EMT/senescence, but lower LN metastasis (30% vs 41.6%)
 - **External validation**: subtype signature successfully stratifies GSE29265 (n=49) and GSE33630 (n=105)
+- **Senescence biomarker**: composite senescence score is the **strongest predictor of LN metastasis** (OR=4.374, p<0.001), outperforming BRAF mutation (OR=1.629) and age (OR=0.983)
+- **ROC AUC**: combined model (senescence+BRAF+age+gender) = 0.672 for LN prediction
 
-For detailed checkbox tracking of all 120 sub-analyses, see [`docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md`](docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md).
+For detailed checkbox tracking of all 134 sub-analyses, see [`docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md`](docs/plans/2026-04-02-elderly-thyroid-carcinoma-multiomics-design.md).
 
 ---
 

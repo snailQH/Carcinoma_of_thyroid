@@ -113,6 +113,22 @@
 - [ ] 91. Calibration plot
 - [ ] 92. R Shiny / Python scoring tool
 
+### Phase 6A: Aging/Senescence Deep Analysis (NEW — 2026-04-05)
+- [x] 92aa. Build 7 senescence gene signatures (SenMayo, SASP Atlas, Cell Cycle Arrest, Telomere, DDR, Immunosenescence, Anti-apoptosis)
+- [x] 92ab. GSVA scoring on all 505 tumor samples
+- [x] 92ac. Senescence vs age correlation (Spearman, all patients)
+- [x] 92ad. Elderly vs young senescence comparison (7 boxplots)
+- [x] 92ae. Senescence by AJCC stage (composite score)
+- [x] 92af. Senescence by LN metastasis (N0 vs N1)
+- [x] 92ag. **Multivariate logistic regression: Senescence OR=4.374 (p=8.6e-5) strongest predictor of LN met**
+- [x] 92ah. ROC analysis: Senescence AUC=0.636, Combined AUC=0.672
+- [x] 92ai. Senescence landscape heatmap (all samples, 7 signatures)
+- [x] 92aj. Senescence by elderly subtype (C1 vs C2, 7 signatures + composite)
+- [x] 92ak. Key senescence gene expression heatmap (20 genes)
+- [x] 92al. Survival by senescence group (all patients + elderly)
+- [x] 92am. Senescence scatter plots vs age (7 signatures)
+- [x] 92an. Forest plot for multivariate predictors
+
 ### Phase 6B: Elderly vs Young Adult Comparison (NEW)
 - [x] 92a. Elderly vs young demographics comparison (120 vs 385 patients)
 - [x] 92b. DEG analysis: elderly vs young (volcano plot, t-test per gene)
@@ -150,7 +166,7 @@
 - [x] 97a. Manuscript draft v1 with embedded figures and elderly vs young section
 - [x] 97b. External validation section added to manuscript
 
-**Summary: 63 of 120 analyses completed (53%)**
+**Summary: 77 of 134 analyses completed (57%)**
 
 ---
 
