@@ -106,7 +106,7 @@ From 505 primary tumor samples in TCGA-THCA, 120 elderly patients (>=60 years) w
 
 Consensus clustering identified k = 2 as the optimal number of subtypes, with exceptional stability metrics: PAC = 0.084 (lowest across k = 2–6) and mean silhouette width = 0.95. Subtype C1 comprised 41 patients (34.2%) and C2 comprised 79 patients (65.8%) (Figure 1).
 
-![Figure 1. Consensus clustering heatmap of 120 elderly PTC patients (k=2, PAC=0.084, silhouette=0.95). Top annotations show subtype (C1/C2), age, and gender.](../figures/Fig1_subtype_heatmap.pdf)
+![Figure 1. Consensus clustering heatmap of 120 elderly PTC patients (k=2, PAC=0.084, silhouette=0.95). Top annotations show subtype (C1/C2), age, and gender.](../figures/Fig1_subtype_heatmap.png)
 
 ### 3.3 Distinct Mutational Drivers Define Each Subtype
 
@@ -126,17 +126,17 @@ The two subtypes exhibited strikingly divergent mutational profiles. **Subtype C
 
 *Patients with available mutation data.
 
-![Figure 2. Tumor mutational burden (TMB) by subtype.](../figures/Fig2_TMB_by_subtype.pdf)
+![Figure 2. Tumor mutational burden (TMB) by subtype.](../figures/Fig2_TMB_by_subtype.png)
 
 ### 3.4 Divergent Pathway Programs
 
 GSVA analysis across 11 biological programs revealed significant differences between subtypes (Figure 4). **Subtype C2** showed elevated scores for EMT (mean GSVA: 0.124 vs. −0.251), cell adhesion (0.188 vs. −0.298), proliferation (0.062 vs. −0.148), SASP (0.120 vs. −0.199), cellular senescence (0.183 vs. −0.288), immunosenescence (0.107 vs. −0.254), and glycolysis (0.121 vs. −0.215). In contrast, **Subtype C1** exhibited higher oxidative phosphorylation (OXPHOS) (0.239 vs. −0.257) and angiogenesis (0.244 vs. −0.164).
 
-![Figure 4A. GSVA pathway heatmap across 11 biological programs, split by subtype.](../figures/Fig4_GSVA_heatmap.pdf)
+![Figure 4A. GSVA pathway heatmap across 11 biological programs, split by subtype.](../figures/Fig4_GSVA_heatmap.png)
 
 The thyroid differentiation score (TDS), reflecting the expression of 10 key thyroid-specific genes, did not show a statistically significant difference between subtypes in this elderly cohort, suggesting that both subtypes retain a degree of thyroid-specific gene expression characteristic of well-differentiated PTC.
 
-![Figure 4B. Thyroid Differentiation Score (TDS) by subtype.](../figures/Fig4_TDS_by_subtype.pdf)
+![Figure 4B. Thyroid Differentiation Score (TDS) by subtype.](../figures/Fig4_TDS_by_subtype.png)
 
 ### 3.5 Cellular Senescence as a Biomarker in Thyroid Carcinoma
 
@@ -161,39 +161,39 @@ Strikingly, multivariate logistic regression revealed that the composite senesce
 
 The senescence score had an odds ratio of **4.374** (p = 8.62 x 10^-5), meaning that a one-unit increase in senescence score was associated with a 4.4-fold increase in the odds of lymph node metastasis. This far exceeded the predictive power of BRAF mutation (OR = 1.629) and age alone (OR = 0.983).
 
-![Figure 9A. Forest plot: multivariate predictors of LN metastasis.](../figures/aging/Aging_forest_plot_LN.pdf)
+![Figure 9A. Forest plot: multivariate predictors of LN metastasis.](../figures/aging/Aging_forest_plot_LN.png)
 
 #### 3.5.3 ROC Analysis for Predictive Performance
 
 ROC analysis confirmed the predictive value of senescence for lymph node metastasis: senescence score alone achieved AUC = 0.636, outperforming BRAF mutation status (AUC = 0.590) and age (AUC = 0.573). The combined model (senescence + BRAF + age + gender) achieved AUC = 0.672.
 
-![Figure 9B. ROC curves for LN metastasis prediction.](../figures/aging/Aging_ROC_senescence.pdf)
+![Figure 9B. ROC curves for LN metastasis prediction.](../figures/aging/Aging_ROC_senescence.png)
 
 #### 3.5.4 Senescence Associates with Advanced Staging
 
 Patients with high composite senescence scores (above median) showed significantly higher rates of advanced disease. The composite senescence score increased progressively across AJCC stages, with Stage IV patients showing the highest senescence burden.
 
-![Figure 9C. Composite senescence score by AJCC stage.](../figures/aging/Aging_senescence_by_stage.pdf)
+![Figure 9C. Composite senescence score by AJCC stage.](../figures/aging/Aging_senescence_by_stage.png)
 
-![Figure 9D. Composite senescence score by LN status (N0 vs N1).](../figures/aging/Aging_senescence_by_LN.pdf)
+![Figure 9D. Composite senescence score by LN status (N0 vs N1).](../figures/aging/Aging_senescence_by_LN.png)
 
 #### 3.5.5 Senescence Landscape Across All Patients
 
 The senescence landscape heatmap revealed heterogeneous senescence patterns across the entire PTC cohort, ordered by patient age. Notably, the senescence patterns did not simply parallel chronological age, reinforcing that tumor senescence represents an independent biological axis.
 
-![Figure 9E. Senescence landscape: 7 signatures scored across all 505 PTC samples, ordered by age.](../figures/aging/Aging_senescence_landscape.pdf)
+![Figure 9E. Senescence landscape: 7 signatures scored across all 505 PTC samples, ordered by age.](../figures/aging/Aging_senescence_landscape.png)
 
 #### 3.5.6 Senescence Distinguishes Elderly Subtypes
 
 Within the elderly cohort, the aggressive C2 subtype showed significantly elevated senescence scores across multiple signatures compared to the indolent C1 subtype, particularly for SenMayo, SASP Atlas, Immunosenescence, and Cell Cycle Arrest signatures.
 
-![Figure 9F. Composite senescence score by elderly subtype.](../figures/aging/Aging_composite_by_subtype.pdf)
+![Figure 9F. Composite senescence score by elderly subtype.](../figures/aging/Aging_composite_by_subtype.png)
 
 #### 3.5.7 Key Senescence Gene Expression
 
 A heatmap of 20 key senescence genes (CDKN1A, CDKN2A, TP53, GLB1, SERPINE1, LMNB1, HMGA1, GDF15, TERT, MKI67, IL6, CXCL1, CCL2, MMP3, FN1, VEGFA, IGFBP3, etc.) across all samples revealed distinct expression patterns between elderly and young patients, and between subtypes within the elderly cohort.
 
-![Figure 9G. Key senescence gene expression heatmap across all PTC patients, annotated by age group and subtype.](../figures/aging/Aging_key_genes_heatmap.pdf)
+![Figure 9G. Key senescence gene expression heatmap across all PTC patients, annotated by age group and subtype.](../figures/aging/Aging_key_genes_heatmap.png)
 
 #### 3.5.8 Transcriptomic Age Acceleration
 
@@ -203,11 +203,11 @@ Strikingly, the aggressive C2 subtype showed **positive age acceleration** (mean
 
 Age acceleration was significantly correlated with the composite senescence score (Spearman rho = 0.280, p = 1.8 x 10^-10), confirming convergent evidence from both scoring approaches. Patients with N1 lymph node metastasis also showed higher age acceleration (mean = +0.175) compared to N0 patients (mean = -0.111).
 
-![Figure 9H. Transcriptomic age acceleration by elderly subtype (C1 vs C2, p=4.5e-12).](../figures/aging/Aging_acceleration_by_subtype.pdf)
+![Figure 9H. Transcriptomic age acceleration by elderly subtype (C1 vs C2, p=4.5e-12).](../figures/aging/Aging_acceleration_by_subtype.png)
 
-![Figure 9I. Transcriptomic aging score vs chronological age across all PTC patients.](../figures/aging/Aging_RNAAge_scatter.pdf)
+![Figure 9I. Transcriptomic aging score vs chronological age across all PTC patients.](../figures/aging/Aging_RNAAge_scatter.png)
 
-![Figure 9J. Age acceleration vs composite senescence score (rho=0.28, p=1.8e-10).](../figures/aging/Aging_acceleration_vs_senescence.pdf)
+![Figure 9J. Age acceleration vs composite senescence score (rho=0.28, p=1.8e-10).](../figures/aging/Aging_acceleration_vs_senescence.png)
 
 ### 3.6 Immune Microenvironment Differences
 
@@ -215,9 +215,9 @@ Immune cell marker-based scoring revealed a complex immune landscape (Figure 3).
 
 The TIDE-like analysis revealed differential positioning of subtypes along the dysfunction-exclusion axes, with C2 samples showing greater T cell dysfunction scores, suggesting potential responsiveness to immune checkpoint blockade in this subtype.
 
-![Figure 3A. Immune cell marker scores heatmap by subtype (z-score).](../figures/Fig3_immune_landscape.pdf)
+![Figure 3A. Immune cell marker scores heatmap by subtype (z-score).](../figures/Fig3_immune_landscape.png)
 
-![Figure 3B. Immune checkpoint expression heatmap by subtype.](../figures/Fig3_checkpoint_heatmap.pdf)
+![Figure 3B. Immune checkpoint expression heatmap by subtype.](../figures/Fig3_checkpoint_heatmap.png)
 
 ### 3.6 Striking Clinical Differences
 
@@ -234,9 +234,9 @@ The most clinically significant finding was the dramatic difference in lymph nod
 
 Overall survival analysis showed a trend toward differential survival, though the limited number of death events in the TCGA-THCA cohort (a well-known limitation) precluded definitive conclusions.
 
-![Figure 5A. Lymph node metastasis proportion by subtype (C1: 2.4%, C2: 44.3%).](../figures/Fig6_LN_metastasis.pdf)
+![Figure 5A. Lymph node metastasis proportion by subtype (C1: 2.4%, C2: 44.3%).](../figures/Fig6_LN_metastasis.png)
 
-![Figure 5B. Kaplan-Meier overall survival curves by subtype.](../figures/Fig6_survival.pdf)
+![Figure 5B. Kaplan-Meier overall survival curves by subtype.](../figures/Fig6_survival.png)
 
 ### 3.7 Elderly vs Young Adult Comparison
 
@@ -256,9 +256,9 @@ Elderly patients showed significantly higher rates of advanced staging (Stage II
 
 Pathway analysis revealed that elderly tumors exhibited elevated EMT (GSVA: 0.042 vs -0.011), senescence (0.037 vs -0.005), SASP (0.023 vs 0.002), and glycolysis (0.073 vs -0.018) compared to young adult tumors. Conversely, elderly tumors showed lower OXPHOS (0.017 vs -0.123). These findings support the hypothesis that aging-related biological programs — particularly cellular senescence and metabolic reprogramming — create a distinct tumor microenvironment in elderly PTC that warrants age-specific molecular classification.
 
-![Figure S1. Volcano plot of differentially expressed genes between elderly and young adult PTC.](../figures/FigS_volcano_elderly_vs_young.pdf)
+![Figure S1. Volcano plot of differentially expressed genes between elderly and young adult PTC.](../figures/FigS_volcano_elderly_vs_young.png)
 
-![Figure S2. Overall survival comparison: elderly vs young adult.](../figures/FigS_survival_elderly_vs_young.pdf)
+![Figure S2. Overall survival comparison: elderly vs young adult.](../figures/FigS_survival_elderly_vs_young.png)
 
 ### 3.8 Single-Cell Validation
 
@@ -266,11 +266,11 @@ Analysis of GSE184362 scRNA-seq data encompassing tumor, paratumor, lymph node m
 
 Immune checkpoint molecules (PDCD1, LAG3, HAVCR2, TIGIT) showed expression primarily in T cell clusters within tumor and lymph node metastasis samples, providing single-cell resolution evidence for the checkpoint expression patterns observed in our bulk analysis.
 
-![Figure 6A. UMAP embedding of scRNA-seq data (Leiden clusters, tissue type, patient, cell types).](../figures/Fig6_scRNA_UMAP.pdf)
+![Figure 6A. UMAP embedding of scRNA-seq data (Leiden clusters, tissue type, patient, cell types).](../figures/Fig6_scRNA_UMAP.png)
 
-![Figure 6B. Cell type proportions by tissue type.](../figures/Fig6_cell_proportions.pdf)
+![Figure 6B. Cell type proportions by tissue type.](../figures/Fig6_cell_proportions.png)
 
-![Figure 6C. Immune checkpoint expression projected on UMAP.](../figures/Fig6_checkpoint_UMAP.pdf)
+![Figure 6C. Immune checkpoint expression projected on UMAP.](../figures/Fig6_checkpoint_UMAP.png)
 
 ### 3.9 Drug Sensitivity Profiles
 
@@ -280,19 +280,19 @@ Anti-PD1 response marker expression was elevated in the overall dataset but show
 
 Actionable target analysis identified subtype-specific druggable targets including MET (substantially higher in C2: 8.06 vs. 5.70 log2TPM), supporting potential therapeutic intervention with MET inhibitors in the aggressive subtype.
 
-![Figure 7A. Drug sensitivity heatmap across 8 drug classes by subtype.](../figures/Fig7_drug_sensitivity_heatmap.pdf)
+![Figure 7A. Drug sensitivity heatmap across 8 drug classes by subtype.](../figures/Fig7_drug_sensitivity_heatmap.png)
 
-![Figure 7B. Actionable target expression heatmap.](../figures/Fig7_actionable_targets.pdf)
+![Figure 7B. Actionable target expression heatmap.](../figures/Fig7_actionable_targets.png)
 
-![Figure 7C. TIDE dysfunction vs exclusion scatter plot by subtype.](../figures/Fig7_TIDE_scatter.pdf)
+![Figure 7C. TIDE dysfunction vs exclusion scatter plot by subtype.](../figures/Fig7_TIDE_scatter.png)
 
 ### 3.10 Machine Learning Classifier
 
 A Random Forest classifier achieved 97.6% balanced accuracy (5-fold stratified CV) for subtype prediction, outperforming Logistic Regression (97.0%) and Gradient Boosting (97.0%) (Figure 8). The top discriminating genes included PDLIM4 (importance: 0.104), KCNN4 (0.088), FN1 (0.076), and SERPINA1 (0.055). The high accuracy with a relatively small gene panel suggests that robust subtype assignment is feasible for clinical translation.
 
-![Figure 8A. Top 20 gene feature importances from Random Forest.](../figures/Fig8_feature_importance.pdf)
+![Figure 8A. Top 20 gene feature importances from Random Forest.](../figures/Fig8_feature_importance.png)
 
-![Figure 8B. Confusion matrix (5-fold stratified cross-validation).](../figures/Fig8_confusion_matrix.pdf)
+![Figure 8B. Confusion matrix (5-fold stratified cross-validation).](../figures/Fig8_confusion_matrix.png)
 
 ### 3.11 External Validation
 
@@ -302,13 +302,13 @@ To assess the reproducibility of our subtype signature, we performed nearest tem
 
 **GSE33630** (n = 105, thyroid cancer expression profiles): Similarly, 82 signature genes were mapped, and NTP scoring produced distinct C1-like and C2-like clusters. Heatmap visualization of signature genes in the validation sets confirmed that the expression patterns discovered in the TCGA elderly cohort were recapitulated in independent datasets.
 
-![Figure S3. GSE29265 external validation: NTP score distribution and signature gene heatmap.](../figures/FigS_GSE29265_NTP.pdf)
+![Figure S3. GSE29265 external validation: NTP score distribution and signature gene heatmap.](../figures/FigS_GSE29265_NTP.png)
 
-![Figure S4. GSE29265 signature gene heatmap in validation cohort.](../figures/FigS_GSE29265_heatmap.pdf)
+![Figure S4. GSE29265 signature gene heatmap in validation cohort.](../figures/FigS_GSE29265_heatmap.png)
 
-![Figure S5. GSE33630 external validation: NTP score distribution.](../figures/FigS_GSE33630_NTP.pdf)
+![Figure S5. GSE33630 external validation: NTP score distribution.](../figures/FigS_GSE33630_NTP.png)
 
-![Figure S6. GSE33630 signature gene heatmap in validation cohort.](../figures/FigS_GSE33630_heatmap.pdf)
+![Figure S6. GSE33630 signature gene heatmap in validation cohort.](../figures/FigS_GSE33630_heatmap.png)
 
 ## 4. Discussion
 
